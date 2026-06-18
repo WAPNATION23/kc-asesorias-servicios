@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Award,
   Users,
@@ -12,6 +13,7 @@ import {
   Building2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import GeometricAccent from "./GeometricAccent";
 
 interface Service {
   title: string;
@@ -67,35 +69,43 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section id="servicios" className="border-b border-[#1A1A1A]/10 bg-[#F9F8F6]">
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
-        <div className="mb-12">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-[#B8860B]">
-            Lo que ofrecemos
-          </p>
-          <h2 className="font-serif text-3xl font-bold text-[#1A1A1A] sm:text-4xl">
-            Nuestros Servicios
-          </h2>
-          <div className="mt-6 h-px w-16 bg-[#000080]" />
+    <section id="servicios" className="relative overflow-hidden border-b border-[#0B2D5B]/10">
+      <div className="mx-auto grid max-w-6xl lg:grid-cols-5">
+        <div className="relative hidden items-center justify-center bg-white px-8 lg:col-span-2 lg:flex">
+          <Image
+            src="/logo-kc.png"
+            alt="K&C Asesorías"
+            width={280}
+            height={140}
+            className="relative z-10 h-auto w-full max-w-[220px] object-contain"
+          />
+          <GeometricAccent className="absolute inset-0 opacity-30" />
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <article
-                key={service.title}
-                className="group border border-[#1A1A1A]/10 bg-white p-6 transition-colors hover:border-[#000080]/30"
-              >
-                <div className="mb-4 inline-flex border border-[#000080]/20 bg-[#000080]/5 p-3">
-                  <Icon className="h-6 w-6 text-[#000080]" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-lg font-semibold leading-snug text-[#1A1A1A]">
-                  {service.title}
-                </h3>
-              </article>
-            );
-          })}
+        <div className="relative bg-[#3B7DC4] px-6 py-16 lg:col-span-3 lg:px-10 lg:py-20">
+          <GeometricAccent className="absolute inset-0 opacity-20" />
+
+          <div className="relative">
+            <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
+              Asesorías y servicios que realizamos
+            </h2>
+            <div className="my-6 h-px w-16 bg-[#C5A059]" />
+
+            <ul className="space-y-4">
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <li key={service.title} className="flex items-start gap-3 text-white/95">
+                    <span className="mt-2 h-0 w-0 shrink-0 border-y-[5px] border-l-0 border-r-[8px] border-y-transparent border-r-[#C5A059]" />
+                    <div className="flex items-start gap-3">
+                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#C5A059]" strokeWidth={1.5} />
+                      <span className="text-base leading-relaxed">{service.title}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
