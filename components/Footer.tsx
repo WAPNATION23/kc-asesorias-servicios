@@ -1,5 +1,14 @@
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
+import { withBasePath } from "@/lib/paths";
+import {
+  EMAIL,
+  PHONE_SECONDARY,
+  PHONE_SECONDARY_TEL,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_URL,
+} from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -19,16 +28,19 @@ export default function Footer() {
                 <Phone className="mt-0.5 h-5 w-5 shrink-0 text-[#D4B06A]" strokeWidth={1.5} />
                 <div>
                   <a
-                    href="tel:+56978750692"
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block text-lg transition-colors hover:text-[#D4B06A]"
                   >
-                    +56 9 78750692
+                    {WHATSAPP_DISPLAY}
+                    <span className="mt-1 block text-sm text-white/55">WhatsApp principal</span>
                   </a>
                   <a
-                    href="tel:+56975844185"
-                    className="mt-1 block text-lg transition-colors hover:text-[#D4B06A]"
+                    href={`tel:${PHONE_SECONDARY_TEL}`}
+                    className="mt-3 block text-lg transition-colors hover:text-[#D4B06A]"
                   >
-                    +56 9 75844185
+                    {PHONE_SECONDARY}
                   </a>
                 </div>
               </li>
@@ -36,23 +48,45 @@ export default function Footer() {
               <li className="flex items-start gap-4">
                 <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#D4B06A]" strokeWidth={1.5} />
                 <a
-                  href="mailto:kccapacitaciones@gmail.com"
+                  href={`mailto:${EMAIL}`}
                   className="text-lg transition-colors hover:text-[#D4B06A]"
                 >
-                  kccapacitaciones@gmail.com
+                  {EMAIL}
                 </a>
               </li>
             </ul>
+
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-block border border-[#D4B06A]/40 px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-[#D4B06A] hover:text-[#D4B06A]"
+            >
+              Escribir por WhatsApp
+            </a>
           </div>
 
           <div className="flex flex-col items-center justify-center lg:items-end">
-            <div className="flex h-40 w-40 items-center justify-center border border-dashed border-white/25 bg-white/5 text-center">
-              <span className="px-4 text-sm font-medium uppercase tracking-wider text-white/55">
-                Código QR WhatsApp
-              </span>
-            </div>
-            <p className="mt-4 max-w-[10rem] text-center text-xs text-white/45 lg:text-right">
-              Espacio reservado para imagen QR
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir WhatsApp de K&C Asesorías"
+              className="border border-white/20 bg-white p-3 transition-colors hover:border-[#D4B06A]/50"
+            >
+              <Image
+                src={withBasePath("/whatsapp-qr.png")}
+                alt="Código QR WhatsApp K&C Asesorías"
+                width={176}
+                height={176}
+                className="h-44 w-44 object-contain"
+              />
+            </a>
+            <p className="mt-4 max-w-[12rem] text-center text-sm text-white/70 lg:text-right">
+              Escanea el código para contactarnos por WhatsApp
+            </p>
+            <p className="mt-1 text-center text-xs text-white/45 lg:text-right">
+              {WHATSAPP_DISPLAY}
             </p>
           </div>
         </div>

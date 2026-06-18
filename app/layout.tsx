@@ -17,7 +17,14 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "K&C Asesorías y Servicios | Excelencia y Compromiso",
   description:
-    "Soluciones integrales de asesoría y servicios con altos estándares de calidad, seguridad y eficiencia para empresas y clientes.",
+    "Asesoría y servicios con foco en seguridad, certificaciones, excelencia operacional y prevención de riesgos. Cotiza por WhatsApp.",
+  openGraph: {
+    title: "K&C Asesorías y Servicios",
+    description:
+      "Excelencia, compromiso y confianza en cada solución. Contáctanos por WhatsApp.",
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

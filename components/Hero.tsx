@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import GeometricAccent from "./GeometricAccent";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const highlights = [
   "Certificaciones y líneas de mando",
@@ -31,10 +32,12 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#contacto"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block border border-[#0B2D5B] bg-[#0B2D5B] px-8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#082447]"
             >
-              Cotiza con nosotros
+              Cotiza por WhatsApp
             </a>
             <a
               href="#servicios"
