@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f7f5f0;
   --foreground: #1a1a1a;
   --navy: #0b2d5b;
   --navy-light: #1a4a7a;
   --blue: #3b7dc4;
   --blue-light: #e8f2fc;
   --gold: #c5a059;
+  --cream: #f7f5f0;
+  --paper: #fdfcf9;
 }
 
 @theme inline {
@@ -18,6 +20,8 @@
   --color-blue: var(--blue);
   --color-blue-light: var(--blue-light);
   --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
 }
@@ -43,25 +47,24 @@ h3 {
   color: #ffffff;
 }
 
-.brand-divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #c5a059 45%,
-    #c5a059 55%,
-    transparent 100%
-  );
-  position: relative;
+.section-shell {
+  border-bottom: 1px solid rgb(11 45 91 / 0.08);
 }
 
-.brand-divider::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 6px;
-  height: 6px;
-  background: #c5a059;
-  transform: translate(-50%, -50%) rotate(45deg);
+.section-paper {
+  background: var(--paper);
+}
+
+.section-cream {
+  background: var(--cream);
+}
+
+.editorial-columns {
+  column-gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .editorial-columns {
+    columns: 2;
+  }
 }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Award,
   Users,
@@ -13,8 +12,7 @@ import {
   Building2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import GeometricAccent from "./GeometricAccent";
-import { withBasePath } from "@/lib/paths";
+import SectionHeading from "./SectionHeading";
 
 interface Service {
   title: string;
@@ -70,44 +68,35 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section id="servicios" className="relative overflow-hidden border-b border-[#0B2D5B]/10">
-      <div className="mx-auto grid max-w-6xl lg:grid-cols-5">
-        <div className="relative hidden items-center justify-center bg-white px-8 lg:col-span-2 lg:flex">
-          <Image
-            src={withBasePath("/logo-kc.png")}
-            alt="K&C Asesorías"
-            width={280}
-            height={140}
-            className="relative z-10 h-auto w-full max-w-[220px] object-contain"
-          />
-          <GeometricAccent className="absolute inset-0 opacity-30" />
-        </div>
+    <section id="servicios" className="section-shell bg-[#0B2D5B] text-white">
+      <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
+        <SectionHeading
+          label="Lo que ofrecemos"
+          title="Asesorías y servicios que realizamos"
+          light
+        />
 
-        <div className="relative bg-[#3B7DC4] px-6 py-16 lg:col-span-3 lg:px-10 lg:py-20">
-          <GeometricAccent className="absolute inset-0 opacity-20" />
-
-          <div className="relative">
-            <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
-              Asesorías y servicios que realizamos
-            </h2>
-            <div className="my-6 h-px w-16 bg-[#C5A059]" />
-
-            <ul className="space-y-4">
-              {services.map((service) => {
-                const Icon = service.icon;
-                return (
-                  <li key={service.title} className="flex items-start gap-3 text-white/95">
-                    <span className="mt-2 h-0 w-0 shrink-0 border-y-[5px] border-l-0 border-r-[8px] border-y-transparent border-r-[#C5A059]" />
-                    <div className="flex items-start gap-3">
-                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#C5A059]" strokeWidth={1.5} />
-                      <span className="text-base leading-relaxed">{service.title}</span>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
+        <ul className="grid gap-0 border-t border-white/10 sm:grid-cols-2">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <li
+                key={service.title}
+                className="flex items-start gap-4 border-b border-white/10 px-0 py-5 sm:px-4"
+              >
+                <span className="mt-1 font-serif text-sm text-[#D4B06A]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="flex items-start gap-3">
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#D4B06A]" strokeWidth={1.5} />
+                  <span className="text-base leading-relaxed text-white/92">
+                    {service.title}
+                  </span>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
