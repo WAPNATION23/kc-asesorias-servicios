@@ -14,25 +14,25 @@ const sizeStyles: Record<
 > = {
   sm: {
     mark: "text-[1.75rem]",
-    amp: "text-[1.35rem]",
+    amp: "text-[1.55rem]",
     subtitle: "text-[0.58rem] tracking-[0.32em]",
     divider: "my-1.5 w-24",
   },
   md: {
     mark: "text-[2.35rem]",
-    amp: "text-[1.85rem]",
+    amp: "text-[2.05rem]",
     subtitle: "text-[0.65rem] tracking-[0.36em]",
     divider: "my-2 w-28",
   },
   lg: {
     mark: "text-[3.75rem] sm:text-[4.25rem]",
-    amp: "text-[3rem] sm:text-[3.35rem]",
+    amp: "text-[3.2rem] sm:text-[3.6rem]",
     subtitle: "text-[0.72rem] tracking-[0.4em] sm:text-xs",
     divider: "my-3 w-36",
   },
   xl: {
     mark: "text-[4.5rem] sm:text-[5.5rem]",
-    amp: "text-[3.6rem] sm:text-[4.25rem]",
+    amp: "text-[3.85rem] sm:text-[4.6rem]",
     subtitle: "text-xs tracking-[0.42em] sm:text-sm sm:tracking-[0.45em]",
     divider: "my-4 w-44",
   },
@@ -52,16 +52,17 @@ export default function Logo({
   return (
     <div className={`inline-flex flex-col ${className}`}>
       <div
-        className={`font-serif font-bold leading-none ${styles.mark} ${navy}`}
+        className={`flex items-baseline pt-1 leading-none ${styles.mark}`}
         aria-label="K&C Asesorías"
       >
-        <span className="inline-block">K</span>
+        <span className={`font-serif font-bold ${navy}`}>K</span>
         <span
-          className={`relative -top-[0.06em] mx-[0.08em] inline-block font-serif italic ${styles.amp} ${gold}`}
+          className={`logo-amp relative -mx-[0.02em] -mb-[0.04em] inline-block ${styles.amp} ${gold}`}
+          aria-hidden="true"
         >
           &amp;
         </span>
-        <span className="inline-block">C</span>
+        <span className={`font-serif font-bold ${navy}`}>C</span>
       </div>
 
       {showSubtitle && (

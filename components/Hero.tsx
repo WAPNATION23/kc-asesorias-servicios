@@ -14,7 +14,7 @@ export default function Hero() {
       <GeometricAccent className="absolute inset-y-0 right-0 hidden w-24 lg:block" />
 
       <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:px-8 lg:py-28">
-        <div className="max-w-xl">
+        <div className="max-w-xl border-l border-[#C5A059]/35 pl-8 sm:pl-10">
           <p className="mb-8 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[#B8956A]">
             Consultora profesional
           </p>
@@ -35,13 +35,13 @@ export default function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-[#0B2D5B] bg-[#0B2D5B] px-8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#082447]"
+              className="inline-block border border-[#0B2D5B] bg-[#0B2D5B] px-8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white btn-primary hover:bg-[#082447]"
             >
               Cotiza por WhatsApp
             </a>
             <a
               href="#servicios"
-              className="inline-block border border-[#0B2D5B]/25 px-8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#0B2D5B] transition-colors hover:border-[#0B2D5B]"
+              className="inline-block border border-[#0B2D5B]/25 px-8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#0B2D5B] btn-primary hover:border-[#0B2D5B] hover:bg-[#0B2D5B]/[0.03]"
             >
               Ver servicios
             </a>

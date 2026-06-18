@@ -82,7 +82,7 @@ export default function Services() {
             return (
               <li
                 key={service.title}
-                className="flex items-start gap-4 border-b border-white/10 px-0 py-5 sm:px-4"
+                className="service-row flex items-start gap-4 border-b border-white/10 px-0 py-5 sm:px-4"
               >
                 <span className="mt-1 font-serif text-sm text-[#D4B06A]">
                   {String(index + 1).padStart(2, "0")}
