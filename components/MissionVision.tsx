@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GeometricAccent from "./GeometricAccent";
+import { withBasePath } from "@/lib/paths";
 
 export default function MissionVision() {
   return (
@@ -7,7 +8,7 @@ export default function MissionVision() {
       <div className="mx-auto grid max-w-6xl lg:grid-cols-2">
         <div className="relative flex items-center justify-center bg-white px-6 py-16 lg:px-12 lg:py-24">
           <Image
-            src="/logo-kc.png"
+            src={withBasePath("/logo-kc.png")}
             alt="K&C Asesorías"
             width={360}
             height={180}

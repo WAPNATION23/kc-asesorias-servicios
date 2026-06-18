@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GeometricAccent from "./GeometricAccent";
+import { withBasePath } from "@/lib/paths";
 
 export default function Hero() {
   return (
@@ -9,7 +10,7 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
         <div>
           <Image
-            src="/logo-kc.png"
+            src={withBasePath("/logo-kc.png")}
             alt="K&C Asesorías y Servicios"
             width={420}
             height={210}
@@ -33,7 +34,7 @@ export default function Hero() {
         <div className="relative hidden lg:block">
           <div className="overflow-hidden border border-[#0B2D5B]/10">
             <Image
-              src="/hero-contact.jpg"
+              src={withBasePath("/hero-contact.jpg")}
               alt="Servicios industriales K&C Asesorías"
               width={700}
               height={500}

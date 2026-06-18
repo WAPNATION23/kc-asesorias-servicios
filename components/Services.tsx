@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import GeometricAccent from "./GeometricAccent";
+import { withBasePath } from "@/lib/paths";
 
 interface Service {
   title: string;
@@ -73,7 +74,7 @@ export default function Services() {
       <div className="mx-auto grid max-w-6xl lg:grid-cols-5">
         <div className="relative hidden items-center justify-center bg-white px-8 lg:col-span-2 lg:flex">
           <Image
-            src="/logo-kc.png"
+            src={withBasePath("/logo-kc.png")}
             alt="K&C Asesorías"
             width={280}
             height={140}

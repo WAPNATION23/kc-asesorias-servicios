@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
+import { withBasePath } from "@/lib/paths";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Image
-              src="/logo-kc.png"
+              src={withBasePath("/logo-kc.png")}
               alt="K&C Asesorías"
               width={200}
               height={100}

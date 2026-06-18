@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { withBasePath } from "@/lib/paths";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
@@ -20,7 +21,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 lg:px-8">
         <a href="#inicio" className="flex items-center">
           <Image
-            src="/logo-kc.png"
+            src={withBasePath("/logo-kc.png")}
             alt="K&C Asesorías y Servicios"
             width={140}
             height={70}

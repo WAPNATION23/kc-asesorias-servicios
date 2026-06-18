@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Briefcase, Shield, Handshake, Zap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { withBasePath } from "@/lib/paths";
 
 interface Value {
   title: string;
@@ -21,7 +22,7 @@ export default function Values() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="hidden justify-center lg:flex">
             <Image
-              src="/logo-kc.png"
+              src={withBasePath("/logo-kc.png")}
               alt="K&C Asesorías"
               width={280}
               height={140}

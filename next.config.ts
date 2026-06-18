@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const isGithubPages = process.env.GITHUB_PAGES === "true";
 const repoName = "kc-asesorias-servicios";
+const githubBasePath = `/${repoName}`;
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -9,9 +10,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? githubBasePath : "",
+  },
   ...(isGithubPages && {
-    basePath: `/${repoName}`,
-    assetPrefix: `/${repoName}/`,
+    basePath: githubBasePath,
+    assetPrefix: `${githubBasePath}/`,
   }),
 };
 
